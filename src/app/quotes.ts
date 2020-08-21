@@ -1,7 +1,9 @@
 export class Quotes {
-  name: string;
-  author:string;
-  submittedBy: string;
-  votes:number;
+  showDetails: boolean;
+  constructor(public name: string, public author:string, public submittedBy:string,public votes:number){
+    this.showDetails= false;
+    }
+  
+  
 }
 

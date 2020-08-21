@@ -2,9 +2,10 @@
   <h1>Inspirational Quotes</h1>
   <hr>
   <ul>
-    <li *ngFor='let quote of quote'>
-      {{quote.name}}
-      <app-quote-details  [quote]='quote'></app-quote-details>
+    <li *ngFor='let quote of quote ; let i=index'>
+      <h3>{{quote.name}}</h3>
+      <button (click)='toggleDetails(i)'>Show Details</button>
+      <app-quote-details  *ngIf='quote.showDetails'[quote]='quote'></app-quote-details>
     </li>
   </ul>
 </div>

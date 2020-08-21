@@ -7,9 +7,12 @@ import{Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quote:Quotes[] = [
-    {name:'Life is a journey', author:'unknown',submittedBy:'Millicent',votes:0},
-    {name:'Do one thing everyday that scares you', author:'Eleanor Roosevelt',submittedBy:'Millicent',votes:0},
+    new Quotes('Life is a journey','unknown','Millicent',0),
+    new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',0),
   ];
+  toggleDetails(index){
+    this.quote[index].showDetails = !this.quote[index].showDetails;
+  }
   constructor() { }
 
   ngOnInit(): void {
