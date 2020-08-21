@@ -1,11 +1,12 @@
 <div>
-  <h1>Inspirational Quotes</h1>
+  <h1 class="text-center">Inspirational Quotes</h1>
   <hr>
   <ul>
     <li *ngFor='let quote of quote ; let i=index'>
-      <h3>{{quote.name}}</h3>  <button (click)="deleteQuote(i)">Delete</button>
-      <button (click)='toggleDetails(i)'>Show Details</button>
+      <h5>{{quote.name}}</h5>  <button (click)="deleteQuote(i)" class="btn btn-outline-danger">Delete</button>
+      <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
       <app-quote-details *ngIf='quote.showDetails'[quote]='quote'></app-quote-details>
     </li>
   </ul>
+  <app-quotes-form></app-quotes-form>
 </div>
