@@ -8,5 +8,5 @@
       <app-quote-details *ngIf='quote.showDetails'[quote]='quote'></app-quote-details>
     </li>
   </ul>
-  <app-quotes-form></app-quotes-form>
+  <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
 </div>

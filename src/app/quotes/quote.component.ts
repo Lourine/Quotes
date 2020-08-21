@@ -20,6 +20,10 @@ export class QuotesComponent implements OnInit {
     this.quote.splice(index, 1);
 
   }
+  addNewQuote(quote){
+    quote.publishDate = new Date(quote.publishDate)
+    this.quote.push(quote)
+  }
  
   
   constructor() { }
