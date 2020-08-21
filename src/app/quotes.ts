@@ -1,7 +1,7 @@
 export class Quotes {
-  Quote: string;
-  Author:string;
+  name: string;
+  author:string;
   submittedBy: string;
-  Votes:number
+  votes:number;
 }
 
