@@ -7,8 +7,8 @@ import{Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quote:Quotes[] = [
-    new Quotes('Life is a journey','unknown','Millicent',0),
-    new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',0),
+    new Quotes('Life is a journey','unknown','Millicent',0, new Date()),
+    new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',0 ,new Date()),
   ];
   toggleDetails(index){
     this.quote[index].showDetails = !this.quote[index].showDetails;
