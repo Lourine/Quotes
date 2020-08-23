@@ -15,8 +15,8 @@ export class QuotesComponent implements OnInit {
   toggleDetails(index){
     this.quote[index].showDetails = !this.quote[index].showDetails;
   }
-  deleteQuote(isComplete,index){
-    if (isComplete){
+  deleteQuote(isRead,index){
+    if (isRead){
         let toDelete=confirm(`Are you sure you want to delete this quote?`)
 
 
