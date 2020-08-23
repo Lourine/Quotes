@@ -7,7 +7,7 @@ import { from } from 'rxjs';
   styleUrls: ['./quotes-form.component.css']
 })
 export class QuotesFormComponent implements OnInit {
-  newQuote= new Quotes("","","",0,new(Date));
+  newQuote= new Quotes("","","",new(Date));
   @Output() addQuote = new EventEmitter<Quotes>();
 
   submitQuote(){
