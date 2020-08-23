@@ -3,10 +3,10 @@
   <hr>
   <ul>
     <li *ngFor='let quote of quote ; let i=index'>
-      <h5>{{quote.name}}</h5>  <button (click)="deleteQuote(i)" class="btn btn-outline-danger">Delete</button>
+      <h5>{{quote.name}}</h5>
       <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
-      <app-quote-details *ngIf='quote.showDetails'[quote]='quote'></app-quote-details>
-    </li>
+      <app-quote-details *ngIf='quote.showDetails'[quote]='quote' (isRead)='deleteQuote($event,i)'></app-quote-details>
+     </li>
   </ul>
   <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
 </div>
