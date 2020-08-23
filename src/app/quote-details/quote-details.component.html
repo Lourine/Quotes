@@ -3,4 +3,8 @@
 <p>Votes: {{quote.votes}}</p>
 <p>Published: {{quote.publishDate|dateAgo}}</p>
 <button class="btn btn-outline-danger" (click) = 'quoteDelete(true)'>Delete</button>
+<div class="button">
+  <button class="btn btn-success" (click)='upVote()' click><img width="30" height="30" src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/thumbs-up-circle-blue-512.png" alt="">  </button>
+  <button class="btn btn-danger" (click)='downVote()' click><img width="30" height="30" src="https://idmd.ca/wp-content/uploads/2016/06/thumbsdown.png">  </button>
+  </div>
 
