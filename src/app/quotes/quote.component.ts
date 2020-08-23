@@ -15,16 +15,30 @@ export class QuotesComponent implements OnInit {
   toggleDetails(index){
     this.quote[index].showDetails = !this.quote[index].showDetails;
   }
-  deleteQuote(index){
-    alert(`You are about to delete ${this.quote[index].name}?`)
-    this.quote.splice(index, 1);
+  deleteQuote(isComplete,index){
+    if (isComplete){
+        let toDelete=confirm(`Are you sure you want to delete this quote?`)
+
+
+        if(toDelete){
+            this.quote.splice(index,1)
+            alert(`Quote has been deleted`)
+        }
+    }
 
   }
   addNewQuote(quote){
     quote.publishDate = new Date(quote.publishDate)
     this.quote.push(quote)
   }
- 
+  upVote(quote) {
+    quote.votes ++
+  }
+
+  downVote(quote) {
+    quote.votes--
+  }
+
   
   constructor() { }
 
