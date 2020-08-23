@@ -7,8 +7,8 @@ import{Quotes} from '../quotes';
 })
 export class QuotesComponent implements OnInit {
   quote:Quotes[] = [
-    new Quotes('Life is a journey','unknown','Millicent',0, new Date()),
-    new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',0 ,new Date()),
+    new Quotes('Life is a journey','unknown','Millicent', new Date()),
+    new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',new Date()),
   ];
  
 
@@ -31,13 +31,7 @@ export class QuotesComponent implements OnInit {
     quote.publishDate = new Date(quote.publishDate)
     this.quote.push(quote)
   }
-  upVote(quote) {
-    quote.votes ++
-  }
-
-  downVote(quote) {
-    quote.votes--
-  }
+  
 
   
   constructor() { }
