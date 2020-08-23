@@ -7,12 +7,18 @@ import {Quotes} from '../quotes'
 })
 export class QuoteDetailsComponent implements OnInit {
   @Input() quote: Quotes;
-  @Output() isComplete= new EventEmitter<boolean>();
+  @Output() isRead= new EventEmitter<boolean>();
 
       quoteDelete(complete:boolean){
-   this.isComplete.emit(complete);
+   this.isRead.emit(complete);
  }
+ upVote() {
+  this.quote.votes ++
+}
 
+downVote() {
+  this.quote.votes --
+}
   
   constructor() { }
 
