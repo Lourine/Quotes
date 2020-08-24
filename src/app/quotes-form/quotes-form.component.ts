@@ -7,13 +7,26 @@ import { from } from 'rxjs';
   styleUrls: ['./quotes-form.component.css']
 })
 export class QuotesFormComponent implements OnInit {
-  newQuote= new Quotes("","","",new(Date));
-  @Output() addQuote = new EventEmitter<Quotes>();
-
-  submitQuote(){
-this.addQuote.emit(this.newQuote);
+  
+  @Output() addQuote = new EventEmitter();
+  quoteStr:string
+    quotePublisher:string
+    quoteAuthor:string
+    theQuote:any
+    quoteDate
+    
+      submitQuote(  ){
+        this.theQuote= new Quotes(this.quoteStr,this.quoteAuthor,this.quotePublisher,this.quoteDate)
+        this.quoteStr=''
+        this.quoteAuthor=''
+        this.quotePublisher=''
+        this.quoteDate= new(Date)
+        this.addQuote.emit(this.theQuote)
   }
-
+  
+  
+    
+  
   constructor() { }
 
   ngOnInit(): void {
