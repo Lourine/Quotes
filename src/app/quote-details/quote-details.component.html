@@ -2,12 +2,8 @@
 <p>Submitted By: {{quote.submittedBy}}</p>
 <p>Published: {{quote.publishDate|dateAgo}}</p>
 
-<div class="button">
-  <span class="m-4">{{ clickCounter }}</span>
-  <button class="btn btn-success" (click)='countClick()' click><img width="30" height="30" src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/thumbs-up-circle-blue-512.png" alt="">  </button>
-  <button class="btn btn-danger" (click)='countDislike()' click><img width="30" height="30" src="https://idmd.ca/wp-content/uploads/2016/06/thumbsdown.png">  </button>
-  <span class="m-4">{{ dislikeCounter }}</span>
-</div>
-<button class="btn btn-outline-danger" (click) = 'quoteDelete(true)'>Delete</button>
+
+<div >
+<button class="btn btn-outline-danger"  (click) = 'quoteDelete(true)'>Delete</button>
 
 

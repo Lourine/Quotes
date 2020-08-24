@@ -1,12 +1,39 @@
-<div>
-  <h1 class="text-center">Inspirational Quotes</h1>
-  <hr>
-  <ul>
-    <li *ngFor='let quote of quote ; let i=index'>
-      <h5>{{quote.name}}</h5>
-      <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
-      <app-quote-details *ngIf='quote.showDetails'[quote]='quote' (isRead)='deleteQuote($event,i)'></app-quote-details>
-     </li>
-  </ul>
-  <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
-</div>
+<div class ="container">
+  <h3>QUOTES APP</h3>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <p class="text-center">"Greatest Quotes Of All Times"</p>
+    </div>
+  </div>
+  <div class="row flex-center pt-5 mt-3 w-100">
+    <div class="col-md-6 text-center text-md-left mb-5">
+      <div class="card-body">
+        <div class="text-center ">
+          <blockquote class="blockquote mb-0">
+            <div *ngFor='let quote of quote ; let i=index'> 
+              <p class="card-text" appHighlight *ngIf="highestUpvote()===quote.votes && quote.votes>0">{{quote.name}}</p>
+                <p class="card-text" *ngIf="highestUpvote()!==quote.votes || quote.votes===0">
+                  {{quote.name}}</p>
+                  <footer class="blockquote-footer">
+                    <button (click)='toggleDetails(i)' class="btn btn-primary">Show Details</button>
+                    <app-quote-details *ngIf='quote.showDetails'[quote]='quote' (isRead)='deleteQuote($event,i)'></app-quote-details>
+                  </footer>
+                  <span class="m-4">{{quote.votes}}</span>
+                  <button class="btn btn-success"  (click)='upVote(i)' click><img width="30" height="30" src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/thumbs-up-circle-blue-512.png" alt="">  </button>
+                  <button class="btn btn-danger" (click)='downVote(i)' click><img width="30" height="30" src="https://idmd.ca/wp-content/uploads/2016/06/thumbsdown.png">  </button>
+                  <span class="m-4">{{ quote.downVotes }}</span>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-5 offset-xl-1">
+          <app-quotes-form (addQuote)="addNewQuote($event)"></app-quotes-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="text-center">Lourine Millicent 2020</p>
+  </div>

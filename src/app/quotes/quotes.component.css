@@ -1,0 +1,14 @@
+h3{
+  color: white;
+  font-weight: 100px;
+  text-align: center;
+  font-family:'Alata', sans-serif;;
+}
+button{
+margin-right: 30px;
+margin-top: 10px
+}
+.card{
+  background-image: url(../../assets/bg5.jpeg);
+  color: white;
+}

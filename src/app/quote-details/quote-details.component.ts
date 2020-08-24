@@ -6,9 +6,7 @@ import {Quotes} from '../quotes'
   styleUrls: ['./quote-details.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
-  clickCounter: number = 0;
-  dislikeCounter: number = 0;
-
+  
   @Input() quote: Quotes;
   @Output() isRead= new EventEmitter<boolean>();
 
@@ -17,14 +15,10 @@ export class QuoteDetailsComponent implements OnInit {
  }
  
 
+
   constructor() { }
 
   ngOnInit() {}
   
-  countClick() {
-    this.clickCounter += 1;
-  }
-  countDislike() {
-    this.dislikeCounter += 1;
-  }
+  
 }
