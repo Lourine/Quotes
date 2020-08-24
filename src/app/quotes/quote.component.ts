@@ -10,7 +10,7 @@ export class QuotesComponent implements OnInit {
   votes: number = 0;
   clickCounter=0;
   quote:Quotes[] = [
-    new Quotes('Life is a journey','unknown','Millicent', new Date()),
+    new Quotes('He who likes tasting develops a pungent for tasting','Mash','Wangari', new Date()),
     new Quotes('Do one thing everyday that scares you','Eleanor Roosevelt','Millicent',new Date()),
   ];
  

@@ -20,7 +20,7 @@ export class QuotesFormComponent implements OnInit {
         this.quoteStr=''
         this.quoteAuthor=''
         this.quotePublisher=''
-        this.quoteDate= new(Date)
+        this.quoteDate= new Date
         this.addQuote.emit(this.theQuote)
   }
   
